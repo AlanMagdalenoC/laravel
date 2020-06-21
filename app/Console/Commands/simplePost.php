@@ -45,7 +45,8 @@ class simplePost extends Command
     {
         $attempts = (int)$this->option('attempts');
         $client = new Client();
-        //Guzzle request  Handle question 4
+        //Handle question 4 , usign the guzzle library creating the request to endpoint
+
         $requests = function ($total) {
             #uri = 'https://postman-echo.com/post';
             $uri = 'https://atomic.incfile.com/fakepost';
