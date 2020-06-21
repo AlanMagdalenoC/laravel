@@ -45,7 +45,7 @@ class simplePost extends Command
     {
         $attempts = (int)$this->option('attempts');
         $client = new Client();
-
+        //Guzzle request  Handle question 4
         $requests = function ($total) {
             #uri = 'https://postman-echo.com/post';
             $uri = 'https://atomic.incfile.com/fakepost';
@@ -55,6 +55,12 @@ class simplePost extends Command
                 ]);
             }
         };
+        /*
+            Handle Question 5
+            Using pool and promise handle question 5, because using the pool we can manage the attempts of request
+            With promise force to complete the process and continue with the next request
+
+        */
 
         $pool = new Pool($client, $requests($attempts), [
             'concurrency' => 5,
